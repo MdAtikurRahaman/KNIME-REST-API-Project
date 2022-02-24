@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "48c24dd3-1edf-4323-a11b-81598b4b565a",
+		"name": "KNIME Projects",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "knime",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "https://www.knime.com/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"let resBody = pm.response.text; \r",
+							"pm.test(\"Verify content type is present in Response header\"),function(){\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"}\r",
+							"pm.test(\"Verify Date is present in Response header\"),function(){\r",
+							"    pm.expect(\"Date\").to.equal(pm.response.header(\"Wed, 23 Feb 2022 16:34:48 GMT\"));\r",
+							"}\r",
+							"pm.test(\"Verify response time below 700 ms\",function(){\r",
+							"    pm.expect(pm.response.responseTime).to.below(700);\r",
+							"})\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Verify Date is present in Response Header\", function () {\r",
+							"    pm.response.to.have.header(\"Date\");\r",
+							"});\r",
+							"pm.test(\"Verify Transfer-Encoding is present in Response Header\", function () {\r",
+							"    pm.expect( \"keep-alive\" ).to.equal( pm.response.headers.get(\"Connection\") );\r",
+							"});\r",
+							"pm.test(\"Verify Content-Length is present in Response header\"),function(){\r",
+							"    pm.expect(\"Content-Length\").to.equal(pm.response.header(\"27593\"));\r",
+							"}\r",
+							"pm.test(\"Verify Content-Type is present in Response header\"),function(){\r",
+							"    pm.expect(\"Content-Type\").to.equal(pm.response.header(\"text/html; charset=UTF-8\"));\r",
+							"}\r",
+							"pm.test(\"Verify Content-language is present in Response header\"),function(){\r",
+							"    pm.expect(\"Content-language\").to.equal(pm.response.header(\"en\"));\r",
+							"}\r",
+							"pm.test(\"Verify X-Frame-Options is present in Response header\"),function(){\r",
+							"    pm.expect(\"X-Frame-Options\").to.equal(pm.response.header(\"SAMEORIGIN\"));\r",
+							"}\r",
+							"pm.test(\"Verify Permissions-Policy is present in Response header\"),function(){\r",
+							"    pm.expect(\"Permissions-Policy\").to.equal(pm.response.header(\"interest-cohort=()\"));\r",
+							"}\r",
+							"pm.test(\"Verify ETag is present in Response header\"),function(){\r",
+							"    pm.expect(\"ETag\").to.equal(pm.response.header(\"W/'1645654898'\"));\r",
+							"}\r",
+							"pm.test(\"Verify Fastly-Drupal-HTML is present in Response header\"),function(){\r",
+							"    pm.expect(\"Fastly-Drupal-HTML\").to.equal(pm.response.header(\"YES\"));\r",
+							"}\r",
+							"pm.test(\"Verify X-LAGOON is present in Response header\"),function(){\r",
+							"    pm.expect(\"X-LAGOON\").to.equal(pm.response.header(\"amazeeio-ch4>knime-master:nginx>nginx-549559f9f8-pzjd7\"));\r",
+							"}\r",
+							"pm.test(\"Verify Content-Encoding is present in Response header\"),function(){\r",
+							"    pm.expect(\"Content-Encoding\").to.equal(pm.response.header(\"gzip\"));\r",
+							"}\r",
+							"pm.test(\"Verify Accept-Ranges is present in Response header\"),function(){\r",
+							"    pm.expect(\"Accept-Ranges\").to.equal(pm.response.header(\"bytes\"));\r",
+							"}\r",
+							"pm.test(\"Verify Age is present in Response header\"),function(){\r",
+							"    pm.expect(\"Age\").to.equal(pm.response.header(\"35623\"));\r",
+							"}\r",
+							"pm.test(\"Verify Vary is present in Response header\"),function(){\r",
+							"    pm.expect(\"Vary\").to.equal(pm.response.header(\"Cookie, Accept-Encoding\"));\r",
+							"}\r",
+							"pm.test(\"Verify X-UA-Compatible is present in Response header\"),function(){\r",
+							"    pm.expect(\"X-UA-Compatible\").to.equal(pm.response.header(\"IE=edge\"));\r",
+							"}\r",
+							"pm.test(\"Verify Strict-Transport-Security is present in Response header\"),function(){\r",
+							"    pm.expect(\"Strict-Transport-Security\").to.equal(pm.response.header(\"max-age=31557600\"));\r",
+							"}\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.knime.com/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"knime",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
